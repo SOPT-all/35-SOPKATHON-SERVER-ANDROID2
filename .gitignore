@@ -49,5 +49,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-*.yml
-application.yml
+.env
+*.env
