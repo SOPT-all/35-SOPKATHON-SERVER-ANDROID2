@@ -51,6 +51,3 @@ bin/
 
 .env
 *.env
-
-*.yml
-application.yml
