@@ -1,6 +1,7 @@
 package com.and_sopt.sopkathon.global.exception;
 
-import com.and_sopt.cdsp.global.response.enums.ErrorCode;
+
+import com.and_sopt.sopkathon.global.response.enums.ErrorCode;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 

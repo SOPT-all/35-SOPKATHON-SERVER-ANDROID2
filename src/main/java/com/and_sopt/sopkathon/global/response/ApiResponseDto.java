@@ -1,7 +1,7 @@
 package com.and_sopt.sopkathon.global.response;
 
-import com.and_sopt.cdsp.global.response.enums.ErrorCode;
-import com.and_sopt.cdsp.global.response.enums.SuccessCode;
+import com.and_sopt.sopkathon.global.response.enums.ErrorCode;
+import com.and_sopt.sopkathon.global.response.enums.SuccessCode;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.annotation.Nullable;

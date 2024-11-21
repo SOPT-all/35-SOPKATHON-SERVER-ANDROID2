@@ -1,7 +1,8 @@
 package com.and_sopt.sopkathon.global.exception;
 
-import com.and_sopt.cdsp.global.response.ApiResponseDto;
-import com.and_sopt.cdsp.global.response.enums.ErrorCode;
+
+import com.and_sopt.sopkathon.global.response.ApiResponseDto;
+import com.and_sopt.sopkathon.global.response.enums.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
