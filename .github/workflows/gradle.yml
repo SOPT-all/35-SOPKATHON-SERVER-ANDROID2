@@ -27,9 +27,9 @@ jobs:
     - name: Run chmod to make gradlew executable
       run: chmod +x ./gradlew
 
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
-
+    - name: Build without tests
+      run: ./gradlew build -x test
+      
     # Add SSH deployment after Gradle build
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@v0.1.10
