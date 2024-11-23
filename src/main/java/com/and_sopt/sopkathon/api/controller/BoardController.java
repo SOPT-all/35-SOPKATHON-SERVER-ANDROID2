@@ -30,6 +30,7 @@ public class BoardController {
         if (request.getContent() == null || request.getContent().trim().isEmpty()) {
             throw new CustomException(ErrorCode.BOARD_BAD_REQUEST);
         }
+        boardService.createBoard(userId, request.getContent());
 
         return ApiResponseDto.success(SuccessCode.BOARD_POST_SUCCESS, boardService.createBoard(userId, request.getContent()));
     }
