@@ -9,7 +9,8 @@ import org.springframework.http.HttpStatus;
 public enum SuccessCode {
 
     //200 OK
-    MOVIE_TIMELINE_GET_SUCCESS(20001, HttpStatus.OK, "게시글이 성공적으로 생성되었습니다.");
+    MOVIE_TIMELINE_GET_SUCCESS(20001, HttpStatus.OK, "게시글이 성공적으로 생성되었습니다."),
+    USER_FOUND(20001, HttpStatus.OK, "유저를 성공적으로 찾았습니다.");
 
     private final int code;
     private final HttpStatus httpStatus;
