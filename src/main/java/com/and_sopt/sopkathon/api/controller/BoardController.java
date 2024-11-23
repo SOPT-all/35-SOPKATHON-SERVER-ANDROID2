@@ -2,6 +2,7 @@ package com.and_sopt.sopkathon.api.controller;
 
 
 import com.and_sopt.sopkathon.api.dto.req.BoardCreateReq;
+import com.and_sopt.sopkathon.api.dto.res.BoardIdRes;
 import com.and_sopt.sopkathon.api.dto.res.BoardsListResponseDto;
 import com.and_sopt.sopkathon.api.dto.res.BoardRes;
 import com.and_sopt.sopkathon.api.service.BoardService;
@@ -24,13 +25,13 @@ public class BoardController {
     }
 
     @PostMapping("/board/{userId}")
-    private ApiResponseDto<?> createBoard(@PathVariable final long userId, @RequestBody BoardCreateReq request) {
+    private ApiResponseDto<BoardIdRes> createBoard(@PathVariable final long userId, @RequestBody BoardCreateReq request) {
 
         if (request.getContent() == null || request.getContent().trim().isEmpty()) {
             throw new CustomException(ErrorCode.BOARD_BAD_REQUEST);
         }
-        boardService.createBoard(userId, request.getContent());
-        return ApiResponseDto.success(SuccessCode.BOARD_POST_SUCCESS);
+
+        return ApiResponseDto.success(SuccessCode.BOARD_POST_SUCCESS, boardService.createBoard(userId, request.getContent()));
     }
 
 

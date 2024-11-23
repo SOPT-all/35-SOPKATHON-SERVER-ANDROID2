@@ -1,5 +1,6 @@
 package com.and_sopt.sopkathon.api.service;
 
+import com.and_sopt.sopkathon.api.dto.res.BoardIdRes;
 import com.and_sopt.sopkathon.api.dto.res.BoardRes;
 import com.and_sopt.sopkathon.api.dto.res.BoardsListResponseDto;
 import com.and_sopt.sopkathon.api.entity.Board;
@@ -13,10 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class BoardService {
     private final BoardRepository boardRepository;
     private final UserRepository userRepository;
 
-    public void createBoard(final long userId, String content) {
+    public BoardIdRes createBoard(final long userId, String content) {
 
         User savedUser = userRepository.findById(userId)
                 .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
@@ -36,8 +35,10 @@ public class BoardService {
                 .user(savedUser)
                 .build();
 
-        boardRepository.save(board);
+        Board savedBoard = boardRepository.save(board);
 
+        // 게시글 ID 반환
+        return new BoardIdRes(savedBoard.getBoardId());
     }
 
     @Transactional
