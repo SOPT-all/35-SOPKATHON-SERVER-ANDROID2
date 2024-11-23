@@ -21,7 +21,7 @@ public class UserService {
     @Transactional
     public UserResponseDto findUserById(final long userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_USER));
+                .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
         return UserResponseDto.of(user);
     }
 

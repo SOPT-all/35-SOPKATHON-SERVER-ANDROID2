@@ -28,7 +28,7 @@ public class BoardService {
     public void createBoard(final long userId, String content) {
 
         User savedUser = userRepository.findById(userId)
-                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_USER));
+                .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
 
         Board board = Board.builder()
                 .content(content)
