@@ -28,9 +28,11 @@ public class UserService {
     @Transactional
     public List<UsersListResponseDto> getAllUsers() {
         return userRepository.findAll().stream()
+                .filter(user -> user.getUserId() != 1L)
                 .map(UsersListResponseDto::of)
                 .toList();
     }
+
 
 
 }
