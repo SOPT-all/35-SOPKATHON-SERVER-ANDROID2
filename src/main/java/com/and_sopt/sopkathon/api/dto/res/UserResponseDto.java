@@ -3,7 +3,7 @@ package com.and_sopt.sopkathon.api.dto.res;
 import com.and_sopt.sopkathon.api.entity.User;
 
 public record UserResponseDto(
-        Long id,
+        long id,
         String nickname,
         int level
 ) {
