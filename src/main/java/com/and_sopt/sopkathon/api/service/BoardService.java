@@ -6,18 +6,15 @@ import com.and_sopt.sopkathon.api.repository.BoardRepository;
 import com.and_sopt.sopkathon.api.repository.UserRepository;
 import com.and_sopt.sopkathon.global.exception.CustomException;
 import com.and_sopt.sopkathon.global.response.enums.ErrorCode;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class BoardService {
 
     private final BoardRepository boardRepository;
     private final UserRepository userRepository;
-
-    public BoardService(BoardRepository boardRepository,UserRepository userRepository) {
-        this.boardRepository = boardRepository;
-        this.userRepository = userRepository;
-    }
 
     public void createBoard(final long userId, String content) {
 
