@@ -5,8 +5,11 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Getter
+@Builder
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -19,6 +22,11 @@ public class User {
     @Column(name="level",nullable = false)
     private int level;
 
-
+    @Builder
+    public User(Long userId, String nickName, int level) {
+        this.userId = userId;
+        this.nickName = nickName;
+        this.level = level;
+    }
 
 }
