@@ -6,7 +6,6 @@ import com.and_sopt.sopkathon.api.repository.BoardRepository;
 import com.and_sopt.sopkathon.api.repository.UserRepository;
 import com.and_sopt.sopkathon.global.exception.CustomException;
 import com.and_sopt.sopkathon.global.response.enums.ErrorCode;
-import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.stereotype.Service;
 
 @Service
