@@ -1,5 +1,6 @@
 package com.and_sopt.sopkathon.api.service;
 
+import com.and_sopt.sopkathon.api.dto.res.BoardRes;
 import com.and_sopt.sopkathon.api.dto.res.BoardsListResponseDto;
 import com.and_sopt.sopkathon.api.entity.Board;
 import com.and_sopt.sopkathon.api.entity.User;
@@ -13,9 +14,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 @Service
 @RequiredArgsConstructor
 public class BoardService {
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy.MM.dd");
 
     private final BoardRepository boardRepository;
     private final UserRepository userRepository;
@@ -32,6 +37,16 @@ public class BoardService {
 
         boardRepository.save(board);
 
+    }
+
+    public BoardRes getBoard(final long boardId){
+        Board board = boardRepository.findById(boardId).orElseThrow(() -> new CustomException(ErrorCode.BOARD_NOT_FOUND));
+
+        return BoardRes.builder()
+                .createdAt(board.getCreatedAt().format(DATE_FORMATTER))
+                .content(board.getContent())
+                .image(board.getImage())
+                .build();
     }
 
 
