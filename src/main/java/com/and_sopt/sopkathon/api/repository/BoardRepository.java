@@ -11,4 +11,6 @@ import java.util.List;
 public interface BoardRepository extends JpaRepository<Board,Long> {
 
     List<Board> findAllByUser(User user);
+
+    int countByUser(User user);
 }
