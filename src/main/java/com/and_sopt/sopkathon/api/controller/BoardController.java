@@ -39,7 +39,7 @@ public class BoardController {
         List<BoardsListResponseDto> boards = boardService.getBoardsByUserId(userId);
         return ResponseEntity.ok(ApiResponseDto.success(SuccessCode.BOARD_LIST_FOUND, boards));
     }
-    @GetMapping("/{boardId}")
+    @GetMapping("board/{boardId}")
     private ApiResponseDto<BoardRes> getBoard(@PathVariable final long boardId) {
         return ApiResponseDto.success(SuccessCode.BOARD_GET_SUCCESS,boardService.getBoard(boardId));
     }

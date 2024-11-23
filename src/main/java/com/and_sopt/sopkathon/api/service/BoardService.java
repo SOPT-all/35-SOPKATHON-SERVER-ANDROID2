@@ -56,7 +56,7 @@ public class BoardService {
     @Transactional(readOnly = true)
     public List<BoardsListResponseDto> getBoardsByUserId(Long userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_USER));
+                .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
         List<Board> boards = boardRepository.findAllByUser(user);
         return boards.stream().map(BoardsListResponseDto::of).toList();
     }
