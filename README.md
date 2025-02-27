@@ -1,8 +1,8 @@
-# 🥔 stup!d potato (35-SOPKATHON-SERVER-ANDROID2)
+# 🥔 stup!d potato 
+**📌 감자들이 감자짓을 공유해 친구들과 웃음을 나누는 서비스📌** 
+
 ![image](https://github.com/user-attachments/assets/c2c53c8b-ee04-41ff-95ea-bec764bfeeaf)
 
-
-📌 감자들이 감자짓을 공유해 친구들과 웃음을 나누는 서비스📌 
 
 - 감자 키우기를 통해 바보같은 일들을 재밌게 기록해서 공유하고, 친구들의 감자짓을 보고 감자력을 비교하며 서로 웃음을 나누는 서비스입니다.
 - [x]  게시글 생성
